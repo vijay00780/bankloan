@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+}
+
+$color: #fff;
+$textColor: #616C6F;
+$secColor: #10A881;
+$bgColor: #2475B0;
+
+h1 { color: $color; text-align: center; }
+h5 { color: $textColor; }
+h4 { color: $secColor; }
+.topHead { color: $color; background-color: $bgColor !important; }

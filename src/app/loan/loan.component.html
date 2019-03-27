@@ -1,0 +1,41 @@
+
+<div class="container">
+  <div class="jumbotron topHead">
+    <h1>You can apply for loans from $500 and up to $5000</h1>
+  </div>
+
+  <main>
+    <section class="firstSec">
+      <h2 class="mb-4">Choose Loan Amount</h2>
+      <ng5-slider [(value)]="amount"  [options]="loanAmt" (click)="loanAmount(amount)"></ng5-slider>
+    </section>
+    
+    <section class="secondSec mt-4">
+        <h2 class="mb-4">Select the repayment period <span class="badge badge-secondary">?</span></h2>
+        <ng5-slider [(value)]="monthPayment"  [options]="duration" (click)="installments(monthPayment)"></ng5-slider>
+      </section>
+  </main>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+      <h5>Loan Amount</h5>
+      <h4> {{amount | currency}}</h4>
+
+      <h5 class="mt-4">Repayment Period</h5>
+      <h4>{{monthPayment}} Months</h4>
+    </div>
+    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 text-right">
+        <h5>Monthly Payment</h5>
+        <div *ngIf="loading"><img src={{gif}} alt="loading" width="10%"/></div>
+        <h4>{{loanData?.monthlyPayment.amount | currency}}</h4>
+
+        <h5 class="mt-4">Interest Rate</h5>
+        <div *ngIf="loading"><img src={{gif}} alt="loading" width="10%"/></div>
+        <h4 *ngIf="loading == false">{{loanData?.interestRate}}%</h4>
+    </div>
+  </div>
+</div>
+
+
